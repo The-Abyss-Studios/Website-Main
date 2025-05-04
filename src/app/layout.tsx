@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 
 export const metadata: Metadata = {
-  title: "Abyss Studios | Game & Entertainment Studio",
+  title: "Abyss Studios",
   description: "Creating immersive gaming experiences that push the boundaries of entertainment",
   keywords: "game studio, entertainment, gaming, game development, indie games",
 };
