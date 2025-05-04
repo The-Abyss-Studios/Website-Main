@@ -31,7 +31,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[{name: "God Of War Lite", image: "/images/gow.png"},
              {name: "Mansion of Chaos", image: "/images/moc.png"},
-              {name: "Pesky Labrinths", image: "/images/pl.png"},].map((game, index) => (
+              {name: "Pesky Labrinths", image: "/images/pl.png"},
+            {name : "Mockingjay", image: "jay.png"},].map((game, index) => (
               <div key={index} className="card group">
                 <div className="aspect-square mb-4 overflow-hidden gradient-overlay relative w-55 h-45 mx-auto">
                   <Image src={game.image} alt={game.name} layout="fill" objectFit="cover" className="square" />
