@@ -3,25 +3,101 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: 220 20 60; /* Crimson */
+  --primary-dark: 180 20 60;
+  --background: 0 0 0; /* Black */
+  --foreground: 255 255 255;
+  --accent: 220 20 60;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-gradient-to-b from-black via-black to-[#1a0000] text-white;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .gaming-button {
+    @apply px-8 py-3 bg-gradient-to-r from-[#DC143C] to-[#B01030] text-white rounded-lg 
+           hover:from-[#B01030] hover:to-[#8B0000] transition-all duration-300
+           transform hover:scale-105 hover:shadow-lg hover:shadow-[#DC143C]/20
+           border border-[#DC143C]/30 hover:border-[#B01030]
+           font-bold tracking-wider uppercase;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-8
+           bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-text text-transparent
+           relative inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#DC143C] to-[#B01030] transform scale-x-0;
+    transition: transform 0.3s ease;
+  }
+
+  .section-title:hover::after {
+    @apply transform scale-x-100;
+  }
+
+  .card {
+    @apply bg-gradient-to-br from-black/40 to-[#1a0000]/40 backdrop-blur-md rounded-xl p-6
+           border border-[#DC143C]/20 hover:border-[#DC143C]/40
+           transition-all duration-300 hover:shadow-lg
+           hover:shadow-[#DC143C]/10;
+  }
+
+  .nav-link {
+    @apply text-white/80 hover:text-[#DC143C] transition-colors duration-300
+           relative after:absolute after:bottom-0 after:left-0
+           after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#DC143C] after:to-[#B01030]
+           after:transform after:scale-x-0 after:origin-right
+           after:transition-transform after:duration-300
+           hover:after:scale-x-100 hover:after:origin-left;
+  }
+
+  .nav-button {
+    @apply bg-gradient-to-r from-[#DC143C] to-[#B01030] text-white px-4 py-2 rounded-lg
+           hover:from-[#B01030] hover:to-[#8B0000] transition-all duration-300
+           transform hover:scale-105;
+  }
+
+  .gradient-overlay {
+    @apply bg-gradient-to-br from-[#DC143C]/10 to-black/40;
+  }
+
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-padding;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-[#DC143C] to-[#B01030] rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gradient-to-b from-[#B01030] to-[#8B0000];
 }

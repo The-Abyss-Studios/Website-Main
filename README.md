@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abyss Studios Website
+
+A modern and trendy website for a Game and Entertainment Studio built with Next.js and Tailwind CSS.
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Required Images
 
-## Learn More
+The website requires the following images in the `public` directory:
 
-To learn more about Next.js, take a look at the following resources:
+- `hero-bg.jpg` - A high-quality gaming-related background image for the hero section
+- `game-1.jpg`, `game-2.jpg`, `game-3.jpg` - Images for featured games
+- `studio.jpg` - An image of your game development studio
+- `team-1.jpg`, `team-2.jpg`, `team-3.jpg`, `team-4.jpg` - Team member profile pictures
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Update the content in `src/app/page.tsx` to match your studio's information
+2. Replace the placeholder images in the `public` directory with your own
+3. Modify the color scheme in `src/app/globals.css` if desired
+4. Update the metadata in `src/app/layout.tsx`
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Modern, responsive design
+- Animated UI elements
+- Optimized images with Next.js Image component
+- Custom gaming-themed components
+- Mobile-friendly layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Google Fonts (Inter & Orbitron)
+
+## License
+
+MIT License
