@@ -1,11 +1,9 @@
 import Navbar from '@/components/Navbar';
-import AnimatedBackground from '@/components/AnimatedBackground';
-import Link from 'next/link';
+//import Link from 'next/link';
 
 export default function Contact() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-black to-[#1a0000] text-white">
-      <AnimatedBackground />
       <Navbar />
       
       {/* Contact Hero Section */}

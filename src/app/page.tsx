@@ -1,5 +1,4 @@
 import Image from "next/image";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 
