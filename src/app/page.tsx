@@ -41,7 +41,7 @@ export default function Home() {
             </div>
             <div className="card">
               <div className="aspect-square rounded-lg overflow-hidden gradient-overlay">
-                <div className="w-full h-full bg-gradient-to-br from-[#DC143C]/20 via-[#B01030]/10 to-black/40" />
+                <Image src="/images/home.png" alt="Home" layout="fill" objectFit="cover" className="square" />
               </div>
             </div>
           </div>
