@@ -23,31 +23,6 @@ export default function Home() {
           </button>
         </div>
       </section>
-
-      {/* Featured Games Section */}
-      <section id="games" className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="section-title">Featured Games</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[{name: "God Of War Lite", image: "/images/gow.png", breif: "A short 2D demake of GOW"},
-             {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer"},
-              {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo"},].map((game, index) => (
-              <div key={index} className="card group">
-                <div className="aspect-square mb-4 overflow-hidden gradient-overlay relative w-55 h-45 mx-auto">
-                  <Image src={game.image} alt={game.name} layout="fill" objectFit="cover" className="square" />
-                </div>
-                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-text text-transparent">
-                  {game.name}
-                </h3>
-                <p className="text-white/70">
-                  {game.breif}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section id="about" className="py-20 px-4 bg-gradient-to-b from-black/50 to-[#1a0000]/50">
         <div className="max-w-7xl mx-auto">
@@ -72,6 +47,31 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Featured Games Section */}
+      <section id="games" className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="section-title">Featured Games</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[{name: "God Of War Lite", image: "/images/gow.png", breif: "A short 2D demake of GOW"},
+             {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer"},
+              {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo"},].map((game, index) => (
+              <div key={index} className="card group">
+                <div className="aspect-square mb-4 overflow-hidden gradient-overlay relative w-55 h-45 mx-auto">
+                  <Image src={game.image} alt={game.name} layout="fill" objectFit="cover" className="square" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-text text-transparent">
+                  {game.name}
+                </h3>
+                <p className="text-white/70">
+                  {game.breif}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
 
       {/* Team Section */}
       <section id="team" className="py-20 px-4">
