@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
