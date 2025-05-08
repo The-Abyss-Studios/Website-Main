@@ -1,5 +1,37 @@
+"use client";
+
 import Navbar from '@/components/Navbar';
 //import Link from 'next/link';
+import React from 'react';
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  
+  const formData = {
+    name: (e.currentTarget.elements.namedItem('name') as HTMLInputElement).value,
+    email: (e.currentTarget.elements.namedItem('email') as HTMLInputElement).value,
+    subject: (e.currentTarget.elements.namedItem('subject') as HTMLSelectElement).value,
+    message: (e.currentTarget.elements.namedItem('message') as HTMLTextAreaElement).value,
+  };
+
+  console.log('Form Data:', formData);
+
+  const response = await fetch('/api/sendEmail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (response.ok) {
+    alert('Message sent successfully!');
+    // Optionally, reset the form here
+    e.currentTarget.reset();
+  } else {
+    alert('Error sending message. Please try again later.');
+  }
+};
 
 export default function Contact() {
   return (
@@ -33,14 +65,16 @@ export default function Contact() {
                     <svg className="w-6 h-6 mr-3 text-[#DC143C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    abysssstudios@gmail.com
+                    contact@abyssstudios.site
                   </p>
+                  
                   <p className="flex items-center text-white/80">
                     <svg className="w-6 h-6 mr-3 text-[#DC143C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     ----------------
                   </p>
+                  
                   <p className="flex items-center text-white/80">
                     <svg className="w-6 h-6 mr-3 text-[#DC143C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -80,38 +114,44 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-text text-transparent">
                 Send Us a Message
               </h3>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-white/80 mb-2">Your Name</label>
                   <input
                     id="name"
+                    name="name"
                     type="text"
                     className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white
                              placeholder-white/50"
                     placeholder="John Doe"
+                    required
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-white/80 mb-2">Your Email</label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white
                              placeholder-white/50"
                     placeholder="john@example.com"
+                    required
                   />
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-white/80 mb-2">Subject</label>
                   <select
                     id="subject"
+                    name="subject"
                     className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white"
+                    required
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -124,12 +164,14 @@ export default function Contact() {
                   <label htmlFor="message" className="block text-white/80 mb-2">Your Message</label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={6}
                     className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white
                              placeholder-white/50"
                     placeholder="Tell us what's on your mind..."
+                    required
                   />
                 </div>
                 <button type="submit" className="gaming-button w-full">
