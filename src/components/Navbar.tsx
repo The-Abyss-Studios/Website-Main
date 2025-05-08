@@ -28,7 +28,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-[#DC143C]">
-              ABYSS
+            <Image src="/images/ABYSS.png" alt="ABYSS" width={75} height={55} />
             </Link>
           </div>
 
