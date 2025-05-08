@@ -55,11 +55,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="section-title">Featured Games</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[{name: "God Of War Lite", image: "/images/gow.png", breif: "A short 2D demake of GOW", alt:"https://the-abyss-games.itch.io/god-of-war-lite"},
-             {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
-              {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo", alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths"},
-              {name:"Seek a Little", image:"/images/sal.png",breif:"Survive the Onslaught...and never blink!",alt:"https://the-abyss-games.itch.io/seek-a-little"},
-               {name:"Under Beast", image:"/images/ub.png",breif:"Explore a Dark world overrun by...Influencers?",alt:"https://the-abyss-games.itch.io/under-beast"}, ].map((game, index) => (
+            {[{name: "God Of War Lite", image: "/images/gow.png", breif: "A short 2D demake of GOW",genre:"Platformer,RPG" ,alt:"https://the-abyss-games.itch.io/god-of-war-lite"},
+             {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer",genre:"Exploration,Sombre,Jam", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
+              {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo",genre:"Arcade,Jam" ,alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths"},
+              {name:"Seek a Little", image:"/images/sal.png",breif:"Survive the Onslaught...and never blink!",genre:"Exploration,Thriller,Jam",alt:"https://the-abyss-games.itch.io/seek-a-little"},
+               {name:"Under Beast", image:"/images/ub.png",breif:"Explore a Dark world overrun by...Influencers?",genre:"Platformer,RPG",alt:"https://the-abyss-games.itch.io/under-beast"}, ].map((game, index) => (
               <div key={index} className="card group">
                 <Link href={game.alt}>
                 <div className="aspect-square mb-4 overflow-hidden gradient-overlay relative w-55 h-45 mx-auto">
@@ -70,6 +70,9 @@ export default function Home() {
                 </h3>
                 <p className="text-white/70">
                   {game.breif}
+                </p>
+                <p className="text-red/70">
+                  {game.genre}
                 </p>
                 </Link>
               </div>
