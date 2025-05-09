@@ -187,7 +187,7 @@ export default function Contact() {
       <footer className="py-8 px-4 border-t border-[#DC143C]/20 bg-gradient-to-b from-black to-[#1a0000]">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-white/60">
-            © 2025 Abyss Studios. All rights reserved.
+            © 2025 Abyss Studios Private Limited. All rights reserved.
           </p>
         </div>
       </footer>

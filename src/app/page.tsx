@@ -28,15 +28,18 @@ export default function Home() {
         </div>
       </section>
       {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-gradient-to-b from-black/50 to-[#1a0000]/50">
+      <section id="about" className="py-15 px-4 bg-gradient-to-b from-black/50 to-[#1a0000]/50">
         <div className="max-w-7xl mx-auto">
           <h2 className="section-title">About Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
             <div>
-              <p className="text-lg text-white/80 mb-7">
-                At Abyss Studios, we're passionate about creating extraordinary gaming experiences
-                that captivate and inspire. Our team of talented developers and artists work
-                together to push the boundaries of what's possible in gaming.
+              <h4 className="section-title">"The More you Stare into The Abyss the more it Stares Back"</h4>
+              <p className="text-lg text-white/80 mb-5">
+              Abyss Studios Private Limited or Abyss Studios, Founded in 2022 by Mr. Suryanshu Mittal as an indie game studio (then known as Underworld Indie Games), not formally starting full operations until 2024.
+              </p>
+              <p className="mb-5">
+              At Abyss Studios We, Focus on Bringing the Stories to life with an interactive and artistic touch.
+              Here we employ the use of Unreal Engine along with other industry standard tools like Autodesk Maya, Zbrush etc. to Bring the stories written by talented writers to life in the form of immersive experiences
               </p>
               <p className="text-lg text-white/80">
                 Founded with a vision to revolutionize the gaming industry, we combine cutting-edge
@@ -60,7 +63,8 @@ export default function Home() {
              {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer",genre:"Exploration,Sombre,Jam", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
               {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo",genre:"Arcade,Jam" ,alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths"},
               {name:"Seek a Little", image:"/images/sal.png",breif:"Survive the Onslaught...and never blink!",genre:"Exploration,Thriller,Jam",alt:"https://the-abyss-games.itch.io/seek-a-little"},
-               {name:"Under Beast", image:"/images/ub.png",breif:"Explore a Dark world overrun by...Influencers?",genre:"Platformer,RPG",alt:"https://the-abyss-games.itch.io/under-beast"}, ].map((game, index) => (
+               {name:"Under Beast", image:"/images/ub.png",breif:"Explore a Dark world overrun by...Influencers?",genre:"Platformer,RPG",alt:"https://the-abyss-games.itch.io/under-beast"},
+               {name:"Coming Soon", image:"/images/soon.jpeg",breif:"",genre:"",alt:"https://the-abyss-games.itch.io/"}, ].map((game, index) => (
               <div key={index} className="card group">
                 <Link href={game.alt}>
                 <div className="aspect-square mb-4 overflow-hidden gradient-overlay relative w-55 h-45 mx-auto">
@@ -91,7 +95,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { name: "Suryanshu Mittal", image: "/images/surya.png", role: "Founder" },
-              { name: "Daksh Kaushik", image: "/images/Daksh.png", role: "Director of Animation and 3D" },
+              { name: "Daksh Kaushik", image: "/images/Daksh.jpg", role: "Director of Animation and 3D" },
               { name: "Rijul Paul", image: "/images/rijul.png", role: "Director of Production" },
             ].map((member, index) => (
               <div key={index} className="card text-center">
@@ -131,7 +135,7 @@ export default function Home() {
       <footer className="py-8 px-4 border-t border-[#DC143C]/20 bg-gradient-to-b from-black to-[#1a0000]">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-white/60">
-            © 2025 Abyss Studios. All rights reserved.
+            © 2025 Abyss Studios Private Limited. All rights reserved.
           </p>
         </div>
       </footer>
