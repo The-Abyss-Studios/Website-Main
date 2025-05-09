@@ -3,7 +3,8 @@ import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/react"
+//import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@/components/analytics';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
@@ -22,6 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${orbitron.variable} font-sans`}>
+        <Analytics />
+        <SpeedInsights />
         <Navbar />
         {children}
       </body>

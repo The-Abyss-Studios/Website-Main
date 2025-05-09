@@ -7,6 +7,7 @@ import Background from "@/components/background";
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-black to-[#1a0000] text-white">
+      
       <Background />
       <Navbar />
       
