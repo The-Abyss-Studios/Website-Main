@@ -11,7 +11,7 @@ const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 export const metadata: Metadata = {
   title: "Abyss Studios",
   description: "Creating immersive gaming experiences that push the boundaries of entertainment",
-  keywords: "game studio, entertainment, gaming, game development, indie games, Suryanshu Mittal, Indian Game Studios, Gaming, Mobile Games, PC games, Anime, Studio, Game Studio Delhi, India, Delhi, Indie, Art, Music, New Games",
+  keywords: "game studio, entertainment, gaming, game development, indie games, Suryanshu Mittal, Indian Game Studios, Gaming, Mobile Games, PC games, Anime, Studio, Game Studio Delhi, India, Delhi, Indie, Art, Music, New Games, ABYSS, Abyss Studios, ABYSS studios suryanshu mittal",
 };
 
 export default function RootLayout({
