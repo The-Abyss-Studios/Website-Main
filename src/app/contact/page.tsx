@@ -2,41 +2,85 @@
 
 import Navbar from '@/components/Navbar';
 //import Link from 'next/link';
-import React from 'react';
-
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  
-  const formData = {
-    name: (e.currentTarget.elements.namedItem('name') as HTMLInputElement).value,
-    email: (e.currentTarget.elements.namedItem('email') as HTMLInputElement).value,
-    subject: (e.currentTarget.elements.namedItem('subject') as HTMLSelectElement).value,
-    message: (e.currentTarget.elements.namedItem('message') as HTMLTextAreaElement).value,
-  };
-
-  console.log('Form Data:', formData);
-
-  const response = await fetch('/api/sendEmail', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-  });
-
-  if (response.ok) {
-    alert('Message sent successfully!');
-    // Optionally, reset the form here
-    e.currentTarget.reset();
-  } else {
-    alert('Error sending message. Please try again later.');
-  }
-};
+import React, { useState } from 'react';
+import TechBackground from '@/components/TechBackground';
+import Footer from '@/components/Footer';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Message sent successfully! We\'ll get back to you soon.'
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error(data.message || 'Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-black to-[#1a0000] text-white">
+      <TechBackground />
       <Navbar />
+      
       
       {/* Contact Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center px-4">
@@ -114,6 +158,15 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-text text-transparent">
                 Send Us a Message
               </h3>
+              {submitStatus.type && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  submitStatus.type === 'success' 
+                    ? 'bg-green-500/20 border border-green-500/50 text-green-300'
+                    : 'bg-red-500/20 border border-red-500/50 text-red-300'
+                }`}>
+                  {submitStatus.message}
+                </div>
+              )}
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-white/80 mb-2">Your Name</label>
@@ -121,12 +174,15 @@ export default function Contact() {
                     id="name"
                     name="name"
                     type="text"
-                    className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
+                    className="w-full px-4 py-3 bg-black/60 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white
                              placeholder-white/50"
                     placeholder="John Doe"
                     required
+                    disabled={isSubmitting}
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -135,30 +191,33 @@ export default function Contact() {
                     id="email"
                     name="email"
                     type="email"
-                    className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
+                    className="w-full px-4 py-3 bg-black/60 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white
                              placeholder-white/50"
                     placeholder="john@example.com"
                     required
+                    disabled={isSubmitting}
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-white/80 mb-2">Subject</label>
-                  <select
+                  <input
                     id="subject"
                     name="subject"
-                    className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
+                    type="text"
+                    className="w-full px-4 py-3 bg-black/60 
                              border border-[#DC143C]/20 rounded-lg
-                             focus:outline-none focus:border-[#DC143C] text-white"
+                             focus:outline-none focus:border-[#DC143C] text-white
+                             placeholder-white/50"
+                    placeholder="What's this about?"
                     required
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="business">Business Proposal</option>
-                    <option value="careers">Career Opportunities</option>
-                    <option value="support">Technical Support</option>
-                  </select>
+                    disabled={isSubmitting}
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-white/80 mb-2">Your Message</label>
@@ -166,16 +225,23 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={6}
-                    className="w-full px-4 py-3 bg-gradient-to-br from-black/40 to-[#1a0000]/40 
+                    className="w-full px-4 py-3 bg-black/60 
                              border border-[#DC143C]/20 rounded-lg
                              focus:outline-none focus:border-[#DC143C] text-white
                              placeholder-white/50"
                     placeholder="Tell us what's on your mind..."
                     required
+                    disabled={isSubmitting}
+                    value={formData.message}
+                    onChange={handleChange}
                   />
                 </div>
-                <button type="submit" className="gaming-button w-full">
-                  Send Message
+                <button 
+                  type="submit" 
+                  className={`gaming-button w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -183,14 +249,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 border-t border-[#DC143C]/20 bg-gradient-to-b from-black to-[#1a0000]">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-white/60">
-            © 2025 Abyss Studios Private Limited. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer handleNavClick={handleNavClick} />
     </main>
   );
 } 

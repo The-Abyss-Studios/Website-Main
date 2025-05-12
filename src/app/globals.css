@@ -8,9 +8,14 @@
   --background: 0 0 0; /* Black */
   --foreground: 255 255 255;
   --accent: 220 20 60;
+  scroll-behavior: smooth;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-gradient-to-b from-black via-black to-[#1a0000] text-white;
   }
@@ -49,18 +54,20 @@
   }
 
   .nav-link {
-    @apply text-white/80 hover:text-[#DC143C] transition-colors duration-300
+    @apply text-white/80 hover:text-[#DC143C] transition-all duration-300
            relative after:absolute after:bottom-0 after:left-0
            after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#DC143C] after:to-[#B01030]
            after:transform after:scale-x-0 after:origin-right
            after:transition-transform after:duration-300
-           hover:after:scale-x-100 hover:after:origin-left;
+           hover:after:scale-x-100 hover:after:origin-left
+           hover:translate-y-[-2px];
   }
 
   .nav-button {
     @apply bg-gradient-to-r from-[#DC143C] to-[#B01030] text-white px-4 py-2 rounded-lg
            hover:from-[#B01030] hover:to-[#8B0000] transition-all duration-300
-           transform hover:scale-105;
+           transform hover:scale-105 hover:translate-y-[-2px]
+           hover:shadow-lg hover:shadow-[#DC143C]/20;
   }
 
   .gradient-overlay {
@@ -69,6 +76,15 @@
 
   .gradient-border {
     @apply border border-transparent bg-gradient-to-r from-[#DC143C] to-[#B01030] bg-clip-padding;
+  }
+
+  /* Section transitions */
+  section {
+    @apply transition-all duration-700 ease-in-out;
+  }
+
+  section:target {
+    @apply scroll-mt-20;
   }
 }
 
