@@ -157,7 +157,7 @@ export default function Careers() {
       {/* Open Positions Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="section-title mb-12">Open Positions</h2>
+          <h2 className="section-title mb-12">Positions</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Job Listings */}
             <div className="space-y-6">
