@@ -118,7 +118,7 @@ export default function Home() {
               {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo", genre:"Arcade,Jam", alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths"},
               {name:"Seek a Little", image:"/images/sal.png", breif:"Survive the Onslaught...and never blink!", genre:"Exploration,Thriller,Jam", alt:"https://the-abyss-games.itch.io/seek-a-little"},
               {name:"Under Beast", image:"/images/ub.png", breif:"Explore a Dark world overrun by...Influencers?", genre:"Platformer,RPG", alt:"https://the-abyss-games.itch.io/under-beast"},
-              {name:"Coming Soon", image:"/images/soon.jpeg", breif:"", genre:"", alt:"https://the-abyss-games.itch.io/"}
+              {name:"Coming Soon", image:"/images/soon.jpeg", breif:"", genre:"Coming Soon", alt:"https://the-abyss-games.itch.io/"}
             ].map((game, index) => (
               <div key={index} className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/20 to-transparent rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>

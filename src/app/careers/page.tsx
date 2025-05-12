@@ -38,7 +38,7 @@ export default function Careers() {
       title: "Senior Game Developer",
       department: "Development",
       location: "Delhi, IN",
-      type: "Full-time",
+      type: "Full-time, Currently Closed",
       description: "Join our core development team to create immersive gaming experiences using Unreal Engine. You'll be working on cutting-edge game mechanics and pushing the boundaries of interactive entertainment.",
       requirements: [
         "5+ years of experience in game development",
@@ -59,7 +59,7 @@ export default function Careers() {
       title: "3D Environment Artist",
       department: "Art",
       location: "Delhi, IN",
-      type: "Full-time",
+      type: "Full-time, Currently Closed",
       description: "Create stunning and immersive game environments that bring our worlds to life. You'll be working with our art team to develop unique and memorable game spaces.",
       requirements: [
         "3+ years of experience in 3D environment art",
@@ -80,7 +80,7 @@ export default function Careers() {
       title: "Game Designer",
       department: "Design",
       location: "Delhi, IN",
-      type: "Full-time",
+      type: "Full-time, Currently Closed",
       description: "Shape the future of our games by designing engaging gameplay mechanics and memorable player experiences. You'll be working closely with our development and art teams to bring your designs to life.",
       requirements: [
         "3+ years of experience in game design",
