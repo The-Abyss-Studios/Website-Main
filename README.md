@@ -1,52 +1,118 @@
-# Abyss Studios Website
+# Abyss Studios - Game Development Studio Website
 
-A modern and trendy website for a Game and Entertainment Studio built with Next.js and Tailwind CSS.
+A modern, responsive website for Abyss Studios, showcasing our game development projects, team, and career opportunities.
 
-## Getting Started
+## 🎮 Features
 
-1. Install dependencies:
-```bash
-npm install
+- **Modern Design**: Sleek, techno-aesthetic with crimson color scheme
+- **Responsive Layout**: Optimized for all devices
+- **Interactive Elements**:
+  - Dynamic particle background
+  - Smooth scrolling
+  - Animated transitions
+  - Interactive game cards
+  - Modern form designs
+- **Career Portal**:
+  - Job listings
+  - Interactive application form
+  - Resume upload functionality
+- **Contact System**:
+  - Email integration
+  - Form validation
+  - Success/error handling
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Email**: Nodemailer
+- **Deployment**: Vercel
+
+## 📋 Prerequisites
+
+- Node.js 18.0 or later
+- npm or yarn
+- SMTP server credentials
+
+## 🛠️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/abyss-studios/website.git
+   cd website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create a `.env.local` file in the root directory with the following variables:
+   ```
+   SMTP_HOST=your-smtp-host
+   SMTP_PORT=your-smtp-port
+   SMTP_USER=your-smtp-username
+   SMTP_PASSWORD=your-smtp-password
+   CONTACT_EMAIL=your-contact-email
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🏗️ Project Structure
+
+```
+abyss/
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── api/            # API routes
+│   │   ├── careers/        # Careers pages
+│   │   ├── contact/        # Contact page
+│   │   └── page.tsx        # Home page
+│   ├── components/         # React components
+│   └── styles/            # Global styles
+├── public/                 # Static assets
+└── package.json           # Project dependencies
 ```
 
-2. Run the development server:
-```bash
-npm run dev
-```
+## 📧 Email Configuration
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+The website uses Nodemailer for sending emails. Configure your SMTP settings in the `.env.local` file with your preferred email service provider.
 
-## Required Images
+## 🎨 Customization
 
-The website requires the following images in the `public` directory:
+### Colors
+The main color scheme uses crimson (`#DC143C`) as the primary color. You can modify the colors in:
+- `tailwind.config.js` for global color definitions
+- `globals.css` for specific component styles
 
-- `hero-bg.jpg` - A high-quality gaming-related background image for the hero section
-- `game-1.jpg`, `game-2.jpg`, `game-3.jpg` - Images for featured games
-- `studio.jpg` - An image of your game development studio
-- `team-1.jpg`, `team-2.jpg`, `team-3.jpg`, `team-4.jpg` - Team member profile pictures
+### Content
+Update the content in:
+- `src/app/page.tsx` for the home page
+- `src/app/careers/page.tsx` for job listings
+- `src/components/` for reusable components
 
-## Customization
+## 🚀 Deployment
 
-1. Update the content in `src/app/page.tsx` to match your studio's information
-2. Replace the placeholder images in the `public` directory with your own
-3. Modify the color scheme in `src/app/globals.css` if desired
-4. Update the metadata in `src/app/layout.tsx`
+The site is configured for deployment on Vercel:
 
-## Features
+1. Push your code to the repository
+2. Import the project in Vercel
+3. Configure environment variables
+4. Deploy
 
-- Modern, responsive design
-- Animated UI elements
-- Optimized images with Next.js Image component
-- Custom gaming-themed components
-- Mobile-friendly layout
+## 📝 License
 
-## Tech Stack
+Copyright © 2024 Abyss Studios. All rights reserved.
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Google Fonts (Inter & Orbitron)
-
-## License
-
-MIT License
+This project is proprietary and confidential. Unauthorized copying, distribution, or use of this project, via any medium, is strictly prohibited.
