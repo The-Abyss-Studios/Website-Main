@@ -51,17 +51,24 @@ export default function Footer({ handleNavClick }: FooterProps) {
             </h3>
             <div className="flex space-x-4">
               {[
-                { name: 'Twitter', icon: '𝕏' },
-                { name: 'Discord', icon: '🎮' },
-                { name: 'Instagram', icon: '📸' },
-                { name: 'LinkedIn', icon: '💼' }
+                { name: 'Twitter', icon: "/images/x.svg" , link: "https://x.com/theabyssstudios"},
+                { name: 'Instagram', icon: "/images/instagram.svg" , link: "https://www.instagram.com/abyssstudios_._"},
+                { name: 'LinkedIn', icon: "/images/linkedin.svg" , link: "https://www.linkedin.com/company/the-abyss-studios"}
               ].map((social) => (
                 <a
                   key={social.name}
-                  href="#"
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-[#DC143C]/10 text-[#DC143C] hover:bg-[#DC143C]/20 transition-all duration-300 border border-[#DC143C]/20 hover:border-[#DC143C]/40"
                 >
-                  {social.icon}
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    width={20}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  />
                 </a>
               ))}
             </div>
@@ -75,10 +82,10 @@ export default function Footer({ handleNavClick }: FooterProps) {
               © 2025 Abyss Studios Private Limited. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-white/60 hover:text-[#DC143C] transition-colors duration-300 text-sm">
+              <a href="/privacy-policy" className="text-white/60 hover:text-[#DC143C] transition-colors duration-300 text-sm">
                 Privacy Policy
               </a>
-              <a href="#" className="text-white/60 hover:text-[#DC143C] transition-colors duration-300 text-sm">
+              <a href="/terms-of-service" className="text-white/60 hover:text-[#DC143C] transition-colors duration-300 text-sm">
                 Terms of Service
               </a>
             </div>

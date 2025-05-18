@@ -172,7 +172,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: "Suryanshu Mittal", image: "/images/surya.png", role: "Founder" },
-              { name: "Daksh Kaushik", image: "/images/Daksh.jpg", role: "Director of Animation and 3D" },
+              { name: "Daksh Kaushik", image: "/images/Daksh.png", role: "Director of Animation and 3D" },
               { name: "Rijul Paul", image: "/images/rijul.png", role: "Director of Production" },
             ].map((member, index) => (
               <div key={index} className="group relative">
