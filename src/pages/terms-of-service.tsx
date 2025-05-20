@@ -115,10 +115,10 @@ export default function TermsOfService() {
           <section className="bg-white/5 rounded-lg p-8 border border-[#DC143C]/10">
             <h2 className="text-2xl font-semibold mb-4 text-[#DC143C]">8. Governing Law and Dispute Resolution</h2>
             <p className="mb-4 leading-relaxed">
-              8.1. These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
+              8.1. These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.
             </p>
             <p className="mb-4 leading-relaxed">
-              8.2. Any dispute arising from or relating to these Terms or the Services shall be resolved through binding arbitration in accordance with the rules of [Arbitration Authority].
+              8.2. Any dispute arising from or relating to these Terms or the Services shall be resolved through binding arbitration in accordance with the rules of Government of India.
             </p>
           </section>
 
@@ -139,8 +139,7 @@ export default function TermsOfService() {
             </p>
             <p className="mb-4 leading-relaxed">
               Abyss Studios Private Limited<br />
-              Email: [Your Contact Email]<br />
-              Address: [Your Business Address]
+              Email: contact@abyssstudios.site<br />
             </p>
           </section>
         </div>

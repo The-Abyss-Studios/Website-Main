@@ -147,8 +147,7 @@ export default function PrivacyPolicy() {
             </p>
             <p className="mb-4 leading-relaxed">
               Abyss Studios Private Limited<br />
-              Email: [Your Contact Email]<br />
-              Address: [Your Business Address]
+              Email: contact@abyssstudios.site<br />
             </p>
           </section>
         </div>
