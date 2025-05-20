@@ -11,7 +11,7 @@ const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 
 export const metadata: Metadata = {
   title: 'Abyss Studios | Indie Game Development Studio in India',
-  description: 'Abyss Studios is a premier game development company in India, crafting immersive gaming experiences that push the boundaries of entertainment. Led by Suryanshu Mittal, we create innovative games that combine art, music, and cutting-edge technology.',
+  description: 'Abyss Studios is a indie game development company in India, crafting immersive gaming experiences that push the boundaries of entertainment. Led by Suryanshu Mittal, we create innovative games that combine art, music, and cutting-edge technology.',
   keywords: [
     'game development',
     'gaming studio',
