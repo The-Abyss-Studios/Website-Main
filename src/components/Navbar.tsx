@@ -14,7 +14,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20);
       
       // Update active section based on scroll position
-      const sections = ['games', 'about', 'team', 'contact'];
+      const sections = ['about', 'team', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -67,8 +67,19 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
+              <Link
+                href="/games"
+                className="relative px-4 py-2 text-white/80 hover:text-[#DC143C] transition-all duration-300
+                  after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
+                  after:bg-gradient-to-r after:from-[#DC143C] after:to-[#B01030]
+                  after:transform after:scale-x-0 after:origin-right
+                  after:transition-transform after:duration-300
+                  hover:after:scale-x-100 hover:after:origin-left
+                  hover:translate-y-[-2px]"
+              >
+                Games
+              </Link>
               {[
-                { id: 'games', label: 'Games' },
                 { id: 'about', label: 'About' },
                 { id: 'team', label: 'Team' },
                 { id: 'contact', label: 'Contact' }
@@ -139,8 +150,14 @@ export default function Navbar() {
         isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       } overflow-hidden bg-black/40 backdrop-blur-xl border-t border-[#DC143C]/20`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Link
+            href="/games"
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#DC143C] hover:bg-[#DC143C]/10 transition-all duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Games
+          </Link>
           {[
-            { id: 'games', label: 'Games' },
             { id: 'about', label: 'About' },
             { id: 'team', label: 'Team' },
             { id: 'contact', label: 'Contact' }
