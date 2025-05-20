@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 
 export const metadata: Metadata = {
-  title: 'Abyss Studios | Premier Game Development Studio in India',
+  title: 'Abyss Studios | Indie Game Development Studio in India',
   description: 'Abyss Studios is a premier game development company in India, crafting immersive gaming experiences that push the boundaries of entertainment. Led by Suryanshu Mittal, we create innovative games that combine art, music, and cutting-edge technology.',
   keywords: [
     'game development',
@@ -32,7 +32,19 @@ export const metadata: Metadata = {
     'ABYSS',
     'Game Studio Delhi',
     'Indian Game Development',
-    'Next-Gen Gaming'
+    'Next-Gen Gaming',
+    'Indie Game Development',
+    'Game Development Company',
+    'Game Development Studio',
+    'Game Development Services',
+    'Game Development Company India',
+    'Game Development Studio India',
+    'Game Development Services India',
+    'Game Development Company Delhi',
+    'Game Development Studio Delhi',
+    'Game Development Services Delhi',
+    'Game Development Company India',
+    'Game Development Studio India'
   ].join(', '),
   authors: [{ name: 'Abyss Studios, Suryanshu Mittal', url: 'https://abyssstudios.site' }],
   creator: 'Abyss Studios',
@@ -42,7 +54,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://abyssstudios.site',
-    title: 'Abyss Studios | Premier Game Development Studio in India',
+    title: 'Abyss Studios | Indie Game Development Studio in India',
     description: 'Crafting immersive gaming experiences that push the boundaries of entertainment. Based in Delhi, India.',
     siteName: 'Abyss Studios',
     images: [
@@ -56,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abyss Studios | Premier Game Development Studio in India',
+    title: 'Abyss Studios | Indie Game Development Studio in India',
     description: 'Crafting immersive gaming experiences that push the boundaries of entertainment. Based in Delhi, India.',
     images: ['/images/ABYSS.png'],
     creator: '@theabyssstudios',
