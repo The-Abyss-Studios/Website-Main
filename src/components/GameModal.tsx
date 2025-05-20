@@ -20,6 +20,13 @@ interface GameModalProps {
       steam?: string;
       itch?: string;
     };
+    credits?: {
+      developers?: string[];
+      artists?: string[];
+      designers?: string[];
+      writers?: string[];
+      specialThanks?: string[];
+    };
   };
 }
 
@@ -158,7 +165,7 @@ export default function GameModal({ isOpen, onClose, game }: GameModalProps) {
 
             {/* Download Buttons */}
             {game.downloadLinks && (
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 mb-8">
                 {game.downloadLinks.epic && (
                   <a
                     href={game.downloadLinks.epic}
@@ -197,6 +204,65 @@ export default function GameModal({ isOpen, onClose, game }: GameModalProps) {
                     </svg>
                     itch.io
                   </a>
+                )}
+              </div>
+            )}
+
+            {/* Credits Section */}
+            {game.credits && (
+              <div className="border-t border-[#DC143C]/20 pt-8">
+                <h3 className="text-xl font-bold mb-6 text-white">Credits</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {game.credits.developers && (
+                    <div>
+                      <h4 className="text-[#DC143C] mb-2">Development</h4>
+                      <ul className="list-disc list-inside text-white/70 space-y-1">
+                        {game.credits.developers.map((dev, i) => (
+                          <li key={i}>{dev}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {game.credits.artists && (
+                    <div>
+                      <h4 className="text-[#DC143C] mb-2">Art</h4>
+                      <ul className="list-disc list-inside text-white/70 space-y-1">
+                        {game.credits.artists.map((artist, i) => (
+                          <li key={i}>{artist}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {game.credits.designers && (
+                    <div>
+                      <h4 className="text-[#DC143C] mb-2">Design</h4>
+                      <ul className="list-disc list-inside text-white/70 space-y-1">
+                        {game.credits.designers.map((designer, i) => (
+                          <li key={i}>{designer}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {game.credits.writers && (
+                    <div>
+                      <h4 className="text-[#DC143C] mb-2">Writing</h4>
+                      <ul className="list-disc list-inside text-white/70 space-y-1">
+                        {game.credits.writers.map((writer, i) => (
+                          <li key={i}>{writer}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                {game.credits.specialThanks && (
+                  <div className="mt-6">
+                    <h4 className="text-[#DC143C] mb-2">Special Thanks</h4>
+                    <ul className="list-disc list-inside text-white/70 space-y-1">
+                      {game.credits.specialThanks.map((thanks, i) => (
+                        <li key={i}>{thanks}</li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
             )}

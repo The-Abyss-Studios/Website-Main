@@ -35,6 +35,13 @@ const games = [
     },
     downloadLinks: {
       itch: "https://the-abyss-games.itch.io/god-of-war-lite"
+    },
+    credits: {
+      developers: ["Suryanshu Mittal"],
+      artists: ["Suryanshu Mittal"],
+      designers: ["Suryanshu Mittal"],
+      writers: ["Suryanshu Mittal"],
+      specialThanks: ["God of War Team", "Sony Interactive Entertainment, Thomas Brush"]
     }
   },
   {
@@ -62,6 +69,13 @@ const games = [
     },
     downloadLinks: {
       itch: "https://the-abyss-games.itch.io/mansion-of-chaos"
+    },
+    credits: {
+      developers: ["Suryanshu Mittal", "Daksh Kaushik"],
+      artists: ["Daksh Kaushik"],
+      designers: ["Suryanshu Mittal"],
+      writers: ["What is a writer?"],
+      specialThanks: ["Brackeys Game Jam Community"]
     }
   },
   {
@@ -89,6 +103,13 @@ const games = [
     },
     downloadLinks: {
       itch: "https://the-abyss-games.itch.io/the-pesky-labyrinths"
+    },
+    credits: {
+      developers: ["Suryanshu Mittal"],
+      artists: ["Suryanshu Mittal"],
+      designers: ["Suryanshu Mittal"],
+      writers: ["Suryanshu Mittal"],
+      specialThanks: ["Brackeys Game Jam Community"]
     }
   },
   {
@@ -116,6 +137,13 @@ const games = [
     },
     downloadLinks: {
       itch: "https://the-abyss-games.itch.io/seek-a-little"
+    },
+    credits: {
+      developers: ["Suryanshu Mittal"],
+      artists: ["Suryanshu Mittal"],
+      designers: ["Suryanshu Mittal", "Daksh Kaushik"],
+      writers: ["Suryanshu Mittal"],
+      specialThanks: ["Daksh Kaushik, Brackeys Game Jam Community"]
     }
   },
   {
@@ -143,6 +171,13 @@ const games = [
     },
     downloadLinks: {
       itch: "https://the-abyss-games.itch.io/under-beast"
+    },
+    credits: {
+      developers: ["Suryanshu Mittal"],
+      artists: ["Suryanshu Mittal"],
+      designers: ["Suryanshu Mittal"],
+      writers: ["Suryanshu Mittal"],
+      specialThanks: ["Thomas Brush, X (Twitter) community"]
     }
   },
   {
