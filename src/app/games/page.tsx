@@ -7,43 +7,143 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/background';
 import TechBackground from '@/components/TechBackground';
+import GameModal from '@/components/GameModal';
 
-// Sample game data - replace with your actual game data
 const games = [
   {
     name: "God Of War Lite",
     image: "/images/gow.png",
     brief: "A short 2D demake of GOW",
     genre: "Platformer,RPG",
-    alt: "https://the-abyss-games.itch.io/god-of-war-lite"
+    alt: "https://the-abyss-games.itch.io/god-of-war-lite",
+    version: "1.0.0",
+    systemRequirements: {
+      minimum: [
+        "OS: Windows 7 or later",
+        "Processor: Intel Core i3 or equivalent",
+        "Memory: 4 GB RAM",
+        "Graphics: DirectX 11 compatible GPU",
+        "Storage: 500 MB available space"
+      ],
+      recommended: [
+        "OS: Windows 10",
+        "Processor: Intel Core i5 or equivalent",
+        "Memory: 8 GB RAM",
+        "Graphics: DirectX 12 compatible GPU",
+        "Storage: 1 GB available space"
+      ]
+    },
+    downloadLinks: {
+      itch: "https://the-abyss-games.itch.io/god-of-war-lite"
+    }
   },
   {
     name: "Mansion of Chaos",
     image: "/images/moc.png",
     brief: "An Immersive First-Person Explorer",
     genre: "Exploration,Sombre,Jam",
-    alt: "https://the-abyss-games.itch.io/mansion-of-chaos"
+    alt: "https://the-abyss-games.itch.io/mansion-of-chaos",
+    version: "1.0.0",
+    systemRequirements: {
+      minimum: [
+        "OS: Windows 10",
+        "Processor: Intel Core i3 or equivalent",
+        "Memory: 4 GB RAM",
+        "Graphics: DirectX 11 compatible GPU",
+        "Storage: 1 GB available space"
+      ],
+      recommended: [
+        "OS: Windows 10",
+        "Processor: Intel Core i5 or equivalent",
+        "Memory: 8 GB RAM",
+        "Graphics: DirectX 12 compatible GPU",
+        "Storage: 2 GB available space"
+      ]
+    },
+    downloadLinks: {
+      itch: "https://the-abyss-games.itch.io/mansion-of-chaos"
+    }
   },
   {
     name: "Pesky Labrinths",
     image: "/images/pl.png",
     brief: "A Short Dungeon Explorer Demo",
     genre: "Arcade,Jam",
-    alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths"
+    alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths",
+    version: "1.0.0",
+    systemRequirements: {
+      minimum: [
+        "OS: Windows 7 or later",
+        "Processor: Intel Core i3 or equivalent",
+        "Memory: 2 GB RAM",
+        "Graphics: DirectX 11 compatible GPU",
+        "Storage: 500 MB available space"
+      ],
+      recommended: [
+        "OS: Windows 10",
+        "Processor: Intel Core i5 or equivalent",
+        "Memory: 4 GB RAM",
+        "Graphics: DirectX 12 compatible GPU",
+        "Storage: 1 GB available space"
+      ]
+    },
+    downloadLinks: {
+      itch: "https://the-abyss-games.itch.io/the-pesky-labyrinths"
+    }
   },
   {
     name: "Seek a Little",
     image: "/images/sal.png",
     brief: "Survive the Onslaught...and never blink!",
     genre: "Exploration,Thriller,Jam",
-    alt: "https://the-abyss-games.itch.io/seek-a-little"
+    alt: "https://the-abyss-games.itch.io/seek-a-little",
+    version: "1.0.0",
+    systemRequirements: {
+      minimum: [
+        "OS: Windows 7 or later",
+        "Processor: Intel Core i3 or equivalent",
+        "Memory: 4 GB RAM",
+        "Graphics: DirectX 11 compatible GPU",
+        "Storage: 1 GB available space"
+      ],
+      recommended: [
+        "OS: Windows 10",
+        "Processor: Intel Core i5 or equivalent",
+        "Memory: 8 GB RAM",
+        "Graphics: DirectX 12 compatible GPU",
+        "Storage: 2 GB available space"
+      ]
+    },
+    downloadLinks: {
+      itch: "https://the-abyss-games.itch.io/seek-a-little"
+    }
   },
   {
     name: "Under Beast",
     image: "/images/ub.png",
     brief: "Explore a Dark world overrun by...Influencers?",
     genre: "Platformer,RPG",
-    alt: "https://the-abyss-games.itch.io/under-beast"
+    alt: "https://the-abyss-games.itch.io/under-beast",
+    version: "1.0.0",
+    systemRequirements: {
+      minimum: [
+        "OS: Windows 7 or later",
+        "Processor: Intel Core i3 or equivalent",
+        "Memory: 4 GB RAM",
+        "Graphics: DirectX 11 compatible GPU",
+        "Storage: 1 GB available space"
+      ],
+      recommended: [
+        "OS: Windows 10",
+        "Processor: Intel Core i5 or equivalent",
+        "Memory: 8 GB RAM",
+        "Graphics: DirectX 12 compatible GPU",
+        "Storage: 2 GB available space"
+      ]
+    },
+    downloadLinks: {
+      itch: "https://the-abyss-games.itch.io/under-beast"
+    }
   },
   {
     name: "Coming Soon",
@@ -59,6 +159,7 @@ const categories = ["All", "Platformer", "RPG", "Exploration", "Arcade", "Thrill
 export default function GamesLibrary() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedGame, setSelectedGame] = useState<typeof games[0] | null>(null);
 
   const filteredGames = games.filter(game => {
     const matchesCategory = selectedCategory === "All" || game.genre.toLowerCase().includes(selectedCategory.toLowerCase());
@@ -120,7 +221,10 @@ export default function GamesLibrary() {
               <div key={index} className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/20 to-transparent rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                 <div className="relative bg-black/40 backdrop-blur-md rounded-xl overflow-hidden border border-[#DC143C]/20 group-hover:border-[#DC143C]/40 transition-all duration-500">
-                  <Link href={game.alt} className="block">
+                  <div 
+                    className="block cursor-pointer"
+                    onClick={() => setSelectedGame(game)}
+                  >
                     <div className="relative aspect-square overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
                       <Image 
@@ -152,7 +256,7 @@ export default function GamesLibrary() {
                       </div>
                       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent to-[#DC143C] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
                     </div>
-                  </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -165,6 +269,15 @@ export default function GamesLibrary() {
           )}
         </div>
       </section>
+
+      {/* Game Modal */}
+      {selectedGame && (
+        <GameModal
+          isOpen={!!selectedGame}
+          onClose={() => setSelectedGame(null)}
+          game={selectedGame}
+        />
+      )}
 
       <Footer />
     </main>

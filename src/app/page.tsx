@@ -115,10 +115,7 @@ export default function Home() {
             {[
               {name: "God Of War Lite", image: "/images/gow.png", breif: "A short 2D demake of GOW", genre:"Platformer,RPG", alt:"https://the-abyss-games.itch.io/god-of-war-lite"},
               {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer", genre:"Exploration,Sombre,Jam", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
-              {name: "Pesky Labrinths", image: "/images/pl.png", breif: "A Short Dungeon Explorer Demo", genre:"Arcade,Jam", alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths"},
               {name:"Seek a Little", image:"/images/sal.png", breif:"Survive the Onslaught...and never blink!", genre:"Exploration,Thriller,Jam", alt:"https://the-abyss-games.itch.io/seek-a-little"},
-              {name:"Under Beast", image:"/images/ub.png", breif:"Explore a Dark world overrun by...Influencers?", genre:"Platformer,RPG", alt:"https://the-abyss-games.itch.io/under-beast"},
-              {name:"Coming Soon", image:"/images/soon.jpeg", breif:"", genre:"Coming Soon", alt:"https://the-abyss-games.itch.io/"}
             ].map((game, index) => (
               <div key={index} className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/20 to-transparent rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -159,6 +156,14 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link 
+              href="/games" 
+              className="inline-block px-8 py-3 bg-gradient-to-r from-[#DC143C] to-[#B01030] hover:from-[#B01030] hover:to-[#8B0000] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#DC143C]/20"
+            >
+              See All Games
+            </Link>
           </div>
         </div>
       </section>
