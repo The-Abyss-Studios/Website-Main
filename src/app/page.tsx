@@ -113,9 +113,9 @@ export default function Home() {
           <h2 className="section-title">Featured Games</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {name: "God Of War Lite", image: "/images/gow.png", breif: "A short 2D demake of GOW", genre:"Platformer,RPG", alt:"https://the-abyss-games.itch.io/god-of-war-lite"},
-              {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer", genre:"Exploration,Sombre,Jam", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
-              {name:"Seek a Little", image:"/images/sal.png", breif:"Survive the Onslaught...and never blink!", genre:"Exploration,Thriller,Jam", alt:"https://the-abyss-games.itch.io/seek-a-little"},
+              {name: "Rusted Hearts", image: "/images/RustedHearts.png", breif: "True Love Prevails Time", genre:"RPG,Puzzle Platformer,Mobile", alt:"https://abyssstudios.site/"},
+              {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer", genre:"Exploration,Sombre,Jam,Windows", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
+              {name:"Seek a Little", image:"/images/sal.png", breif:"Survive the Onslaught...and never blink!", genre:"Exploration,Thriller,Jam,Windows", alt:"https://the-abyss-games.itch.io/seek-a-little"},
             ].map((game, index) => (
               <div key={index} className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/20 to-transparent rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>

@@ -14,7 +14,7 @@ const games = [
     name: "God Of War Lite",
     image: "/images/gow.png",
     brief: "A short 2D demake of GOW",
-    genre: "Platformer,RPG",
+    genre: "Platformer,RPG,Windows",
     alt: "https://the-abyss-games.itch.io/god-of-war-lite",
     version: "1.0.0",
     systemRequirements: {
@@ -48,7 +48,7 @@ const games = [
     name: "Mansion of Chaos",
     image: "/images/moc.png",
     brief: "An Immersive First-Person Explorer",
-    genre: "Exploration,Sombre,Jam",
+    genre: "Exploration,Sombre,Jam,Windows",
     alt: "https://the-abyss-games.itch.io/mansion-of-chaos",
     version: "1.0.0",
     systemRequirements: {
@@ -82,7 +82,7 @@ const games = [
     name: "Pesky Labrinths",
     image: "/images/pl.png",
     brief: "A Short Dungeon Explorer Demo",
-    genre: "Arcade,Jam",
+    genre: "Arcade,Jam,Windows",
     alt: "https://the-abyss-games.itch.io/the-pesky-labyrinths",
     version: "1.0.0",
     systemRequirements: {
@@ -116,7 +116,7 @@ const games = [
     name: "Seek a Little",
     image: "/images/sal.png",
     brief: "Survive the Onslaught...and never blink!",
-    genre: "Exploration,Thriller,Jam",
+    genre: "Exploration,Thriller,Jam,Windows",
     alt: "https://the-abyss-games.itch.io/seek-a-little",
     version: "1.0.0",
     systemRequirements: {
@@ -150,7 +150,7 @@ const games = [
     name: "Under Beast",
     image: "/images/ub.png",
     brief: "Explore a Dark world overrun by...Influencers?",
-    genre: "Platformer,RPG",
+    genre: "Platformer,RPG,Windows",
     alt: "https://the-abyss-games.itch.io/under-beast",
     version: "1.0.0",
     systemRequirements: {
@@ -181,6 +181,13 @@ const games = [
     }
   },
   {
+    name: "Rusted Hearts",
+    image: "/images/RustedHearts.png",
+    brief: "",
+    genre: "Coming Soon,Mobile,Puzzle Platformer",
+    alt: "https://abyssstudios.site/"
+  },
+  {
     name: "Coming Soon",
     image: "/images/soon.jpeg",
     brief: "",
@@ -189,7 +196,7 @@ const games = [
   }
 ];
 
-const categories = ["All", "Platformer", "RPG", "Exploration", "Arcade", "Thriller", "Jam"];
+const categories = ["All", "Platformer", "RPG", "Mobile", "Arcade", "Windows", "Jam"];
 
 export default function GamesLibrary() {
   const [selectedCategory, setSelectedCategory] = useState("All");
