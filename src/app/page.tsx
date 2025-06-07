@@ -113,7 +113,7 @@ export default function Home() {
           <h2 className="section-title">Featured Games</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {name: "Rusted Hearts", image: "/images/RustedHearts.png", breif: "True Love Prevails Time", genre:"RPG,Puzzle Platformer,Mobile", alt:"https://abyssstudios.site/"},
+              {name: "Rusted Hearts", image: "/images/RustedHearts.png", breif: "True Love Prevails Time", genre:"RPG,Puzzle Platformer,Mobile", alt:"https://rh.abyssstudios.site/"},
               {name: "Mansion of Chaos", image: "/images/moc.png", breif: "An Immersive First-Person Explorer", genre:"Exploration,Sombre,Jam,Windows", alt:"https://the-abyss-games.itch.io/mansion-of-chaos"},
               {name:"Seek a Little", image:"/images/sal.png", breif:"Survive the Onslaught...and never blink!", genre:"Exploration,Thriller,Jam,Windows", alt:"https://the-abyss-games.itch.io/seek-a-little"},
             ].map((game, index) => (
