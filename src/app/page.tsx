@@ -98,7 +98,7 @@ export default function Home() {
                   src="/images/home.png" 
                   alt="Abyss Studios" 
                   layout="fill" 
-                  objectFit="cover" 
+                  objectFit="contain" 
                   className="transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/0 via-transparent to-[#DC143C]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
