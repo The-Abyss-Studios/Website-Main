@@ -41,17 +41,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Create a transporter object using SMTP
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'mail.privateemail.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: true, // PrivateEmail requires SSL/TLS
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.SMTP_PORT || '465'),
+      secure: true, // Gmail SSL
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       },
-      tls: {
-        ciphers: 'SSLv3',
-        rejectUnauthorized: false // Only for development/testing
-      }
     });
 
     // Verify SMTP connection

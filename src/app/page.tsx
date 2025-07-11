@@ -176,8 +176,8 @@ export default function Home() {
           <h2 className="section-title">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Suryanshu Mittal", image: "/images/surya.png", role: "Founder" },
-              { name: "Daksh Kaushik", image: "/images/Daksh.png", role: "Director of Animation and 3D" },
+              { name: "Suryanshu Mittal", image: "/images/surya.jpg", role: "Founder and Game Director" },
+              { name: "Daksh Kaushik", image: "/images/Daksh.jpg", role: "Director of Animation and 3D" },
               { name: "Rijul Paul", image: "/images/rijul.png", role: "Director of Production" },
             ].map((member, index) => (
               <div key={index} className="group relative">
